@@ -1,9 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json.Serialization;
-using System.Linq;
 
 namespace AspCoreMentoring.Server
 {
@@ -21,6 +18,7 @@ namespace AspCoreMentoring.Server
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseResponseCompression();
+            app.UseStaticFiles();
 
             if (env.IsDevelopment())
             {
@@ -35,5 +33,6 @@ namespace AspCoreMentoring.Server
             app.UseBlazor<Client.Startup>();
             app.UseBlazorDebugging();
         }
+
     }
 }

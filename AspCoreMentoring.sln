@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.28606.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreMentoring.Server", "AspCoreMentoring.Server\AspCoreMentoring.Server.csproj", "{12D6D615-29A9-4BEC-8728-43F145605D05}"
+	ProjectSection(ProjectDependencies) = postProject
+		{16798409-DEF3-415E-BAC1-6B119AFE9FF8} = {16798409-DEF3-415E-BAC1-6B119AFE9FF8}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreMentoring.Client", "AspCoreMentoring.Client\AspCoreMentoring.Client.csproj", "{31166D82-C986-4017-A343-15B57ECB6AE5}"
 EndProject
@@ -12,8 +15,15 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspCoreMentoring.Service.Common", "AspCoreMentoring.Service.Common\AspCoreMentoring.Service.Common.csproj", "{16798409-DEF3-415E-BAC1-6B119AFE9FF8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspCoreMentoring.Service", "AspCoreMentoring.Service\AspCoreMentoring.Service.csproj", "{A49408D5-BB02-4F4E-A595-A53FF43AD938}"
+	ProjectSection(ProjectDependencies) = postProject
+		{16798409-DEF3-415E-BAC1-6B119AFE9FF8} = {16798409-DEF3-415E-BAC1-6B119AFE9FF8}
+		{F93467F4-CA52-4DF6-A078-DD3FF89B862B} = {F93467F4-CA52-4DF6-A078-DD3FF89B862B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspCoreMentoring.DAL", "AspCoreMentoring.DAL\AspCoreMentoring.DAL.csproj", "{524B7F46-201C-4DEB-AD54-C366A7F5583E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F93467F4-CA52-4DF6-A078-DD3FF89B862B} = {F93467F4-CA52-4DF6-A078-DD3FF89B862B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspCoreMentoring.DAL.Common", "AspCoreMentoring.DAL.Common\AspCoreMentoring.DAL.Common.csproj", "{F93467F4-CA52-4DF6-A078-DD3FF89B862B}"
 EndProject
