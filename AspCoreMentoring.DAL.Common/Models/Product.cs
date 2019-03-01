@@ -1,4 +1,6 @@
-﻿namespace AspCoreMentoring.DAL.Common.Models
+﻿using System;
+
+namespace AspCoreMentoring.DAL.Common.Models
 {
     public class Product
     {
@@ -14,11 +16,11 @@
 
         public decimal UnitPrice { get; set; }
 
-        public int UnitsInStock { get; set; }
+        public Int16 UnitsInStock { get; set; }
 
-        public int UnitsOnOrder { get; set; }
+        public Int16 UnitsOnOrder { get; set; }
 
-        public int ReorderLevel { get; set; }
+        public Int16 ReorderLevel { get; set; }
 
         public bool Discontinued { get; set; }
 

@@ -1,8 +1,9 @@
+using AspCoreMentoring.SharedInfrastructure;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using AspCoreMentoring.SharedInfrastructure;
 
 namespace AspCoreMentoring.Server
 {
@@ -24,6 +25,8 @@ namespace AspCoreMentoring.Server
         public void ConfigureServices(IServiceCollection services)
         {
             services.RegisterDALDependency(Configuration);
+            services.RegisterBLDependency(Configuration);
+            services.AddAutoMapper();
             services.AddMvc().AddNewtonsoftJson();
             services.AddResponseCompression();
         }

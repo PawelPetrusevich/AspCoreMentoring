@@ -11,13 +11,19 @@ namespace AspCoreMentoring.DAL.Repositories
 {
     public class Repository<TModel> : IRepository<TModel>, IDisposable where TModel : class
     {
-        private readonly NorthWindContext context;
-        private readonly DbSet<TModel> dbSet;
+        private bool disposedFlag = false;
+        protected readonly NorthWindContext context;
+        protected readonly DbSet<TModel> dbSet;
 
         public Repository(NorthWindContext context)
         {
             this.context = context;
             dbSet = this.context.Set<TModel>();
+        }
+
+        ~Repository()
+        {
+            Dispose(false);
         }
 
         public virtual async Task<TModel> Add(TModel model)
@@ -39,6 +45,16 @@ namespace AspCoreMentoring.DAL.Repositories
             return result;
         }
 
+        public virtual async Task<IEnumerable<TModel>> GetForOnePage(int skip, int take)
+        {
+            if (skip < 0 || take < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            return await dbSet.Skip(skip).Take(take).ToListAsync();
+        }
+
         public virtual async Task<IEnumerable<TModel>> Find(Expression<Func<TModel, bool>> filterExpression)
         {
             if (filterExpression == null)
@@ -49,9 +65,20 @@ namespace AspCoreMentoring.DAL.Repositories
             return await dbSet.Where(filterExpression).ToListAsync();
         }
 
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                return;
+            }
+
+            this.disposedFlag = true;
+        }
+
         public void Dispose()
         {
-            throw new NotImplementedException();
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
     }
 }

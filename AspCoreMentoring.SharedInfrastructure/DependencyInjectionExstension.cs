@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using AspCoreMentoring.Service.Common.Interfaces;
+using AspCoreMentoring.Service.Services;
 
 namespace AspCoreMentoring.SharedInfrastructure
 {
@@ -20,6 +22,11 @@ namespace AspCoreMentoring.SharedInfrastructure
             serviceCollection.AddScoped<IProductRepository, ProductRepository>();
             serviceCollection.AddScoped<ICategoryRepository, CategoryRepository>();
             serviceCollection.AddScoped<ISupplierRepository, SupplierRepository>();
+        }
+
+        public static void RegisterBLDependency(this IServiceCollection serviceCollection, IConfiguration configuration)
+        {
+            serviceCollection.AddScoped<IProductService, ProductService>();
         }
     }
 }

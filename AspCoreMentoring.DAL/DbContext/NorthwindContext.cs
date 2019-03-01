@@ -14,7 +14,7 @@ namespace AspCoreMentoring.DAL.DbContext
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<Supplier> Suppliers { get; set; }
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(NorthWindContext).Assembly);

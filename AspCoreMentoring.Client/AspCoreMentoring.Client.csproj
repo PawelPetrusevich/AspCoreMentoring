@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AspCoreMentoring.Service.Common\AspCoreMentoring.Service.Common.csproj" />
     <ProjectReference Include="..\AspCoreMentoring.Shared\AspCoreMentoring.Shared.csproj" />
   </ItemGroup>
 

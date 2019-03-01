@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AspCoreMentoring.DAL.Common\AspCoreMentoring.DAL.Common.csproj" />
     <ProjectReference Include="..\AspCoreMentoring.DAL\AspCoreMentoring.DAL.csproj" />
     <ProjectReference Include="..\AspCoreMentoring.Service.Common\AspCoreMentoring.Service.Common.csproj" />
