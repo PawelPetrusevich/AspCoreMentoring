@@ -9,12 +9,12 @@
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Server" Version="0.8.0-preview-19104-04" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Server" Version="3.0.0-preview-19075-0444" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview-19075-0444" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AspCoreMentoring.Client\AspCoreMentoring.Client.csproj" />
-    <ProjectReference Include="..\AspCoreMentoring.DAL\AspCoreMentoring.DAL.csproj" />
-    <ProjectReference Include="..\AspCoreMentoring.Service\AspCoreMentoring.Service.csproj" />
+    <ProjectReference Include="..\AspCoreMentoring.SharedInfrastructure\AspCoreMentoring.SharedInfrastructure.csproj" />
     <ProjectReference Include="..\AspCoreMentoring.Shared\AspCoreMentoring.Shared.csproj" />
   </ItemGroup>
 

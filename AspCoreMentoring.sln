@@ -12,20 +12,22 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreMentoring.Client", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreMentoring.Shared", "AspCoreMentoring.Shared\AspCoreMentoring.Shared.csproj", "{940B109A-B861-4349-94CD-621E1AB77458}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspCoreMentoring.Service.Common", "AspCoreMentoring.Service.Common\AspCoreMentoring.Service.Common.csproj", "{16798409-DEF3-415E-BAC1-6B119AFE9FF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreMentoring.Service.Common", "AspCoreMentoring.Service.Common\AspCoreMentoring.Service.Common.csproj", "{16798409-DEF3-415E-BAC1-6B119AFE9FF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspCoreMentoring.Service", "AspCoreMentoring.Service\AspCoreMentoring.Service.csproj", "{A49408D5-BB02-4F4E-A595-A53FF43AD938}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreMentoring.Service", "AspCoreMentoring.Service\AspCoreMentoring.Service.csproj", "{A49408D5-BB02-4F4E-A595-A53FF43AD938}"
 	ProjectSection(ProjectDependencies) = postProject
 		{16798409-DEF3-415E-BAC1-6B119AFE9FF8} = {16798409-DEF3-415E-BAC1-6B119AFE9FF8}
 		{F93467F4-CA52-4DF6-A078-DD3FF89B862B} = {F93467F4-CA52-4DF6-A078-DD3FF89B862B}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspCoreMentoring.DAL", "AspCoreMentoring.DAL\AspCoreMentoring.DAL.csproj", "{524B7F46-201C-4DEB-AD54-C366A7F5583E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreMentoring.DAL", "AspCoreMentoring.DAL\AspCoreMentoring.DAL.csproj", "{524B7F46-201C-4DEB-AD54-C366A7F5583E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F93467F4-CA52-4DF6-A078-DD3FF89B862B} = {F93467F4-CA52-4DF6-A078-DD3FF89B862B}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspCoreMentoring.DAL.Common", "AspCoreMentoring.DAL.Common\AspCoreMentoring.DAL.Common.csproj", "{F93467F4-CA52-4DF6-A078-DD3FF89B862B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreMentoring.DAL.Common", "AspCoreMentoring.DAL.Common\AspCoreMentoring.DAL.Common.csproj", "{F93467F4-CA52-4DF6-A078-DD3FF89B862B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspCoreMentoring.SharedInfrastructure", "AspCoreMentoring.SharedInfrastructure\AspCoreMentoring.SharedInfrastructure.csproj", "{80ACCE54-F98B-41B6-B586-41EDE856596E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{F93467F4-CA52-4DF6-A078-DD3FF89B862B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F93467F4-CA52-4DF6-A078-DD3FF89B862B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F93467F4-CA52-4DF6-A078-DD3FF89B862B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80ACCE54-F98B-41B6-B586-41EDE856596E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80ACCE54-F98B-41B6-B586-41EDE856596E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80ACCE54-F98B-41B6-B586-41EDE856596E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80ACCE54-F98B-41B6-B586-41EDE856596E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
