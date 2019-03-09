@@ -16,6 +16,7 @@ namespace AspCoreMentoring.Server.Controllers
             this.productService = productService;
         }
 
+        [HttpGet]
         [Route("GetProducts")]
         public async Task<ProductDto[]> GetProducts(int pageNumber = 1,int? pageSize = null)
         {
