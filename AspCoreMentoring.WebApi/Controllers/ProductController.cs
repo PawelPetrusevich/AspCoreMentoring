@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AspCoreMentoring.Service.Common.DTO;
 using AspCoreMentoring.Service.Common.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AspCoreMentoring.Server.Controllers
+namespace AspCoreMentoring.WebApi.Controllers
 {
     [Route("api/[controller]")]
     public class ProductController : Controller
@@ -16,6 +15,7 @@ namespace AspCoreMentoring.Server.Controllers
             this.productService = productService;
         }
 
+        [HttpGet]
         [Route("GetProducts")]
         public async Task<ProductDto[]> GetProducts(int pageNumber = 1,int? pageSize = null)
         {

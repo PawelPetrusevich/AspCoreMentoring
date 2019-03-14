@@ -1,17 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28606.126
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreMentoring.Server", "AspCoreMentoring.Server\AspCoreMentoring.Server.csproj", "{12D6D615-29A9-4BEC-8728-43F145605D05}"
-	ProjectSection(ProjectDependencies) = postProject
-		{16798409-DEF3-415E-BAC1-6B119AFE9FF8} = {16798409-DEF3-415E-BAC1-6B119AFE9FF8}
-	EndProjectSection
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreMentoring.Client", "AspCoreMentoring.Client\AspCoreMentoring.Client.csproj", "{31166D82-C986-4017-A343-15B57ECB6AE5}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreMentoring.Shared", "AspCoreMentoring.Shared\AspCoreMentoring.Shared.csproj", "{940B109A-B861-4349-94CD-621E1AB77458}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreMentoring.Service.Common", "AspCoreMentoring.Service.Common\AspCoreMentoring.Service.Common.csproj", "{16798409-DEF3-415E-BAC1-6B119AFE9FF8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreMentoring.Service", "AspCoreMentoring.Service\AspCoreMentoring.Service.csproj", "{A49408D5-BB02-4F4E-A595-A53FF43AD938}"
@@ -27,7 +18,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreMentoring.DAL", "Asp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreMentoring.DAL.Common", "AspCoreMentoring.DAL.Common\AspCoreMentoring.DAL.Common.csproj", "{F93467F4-CA52-4DF6-A078-DD3FF89B862B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspCoreMentoring.SharedInfrastructure", "AspCoreMentoring.SharedInfrastructure\AspCoreMentoring.SharedInfrastructure.csproj", "{80ACCE54-F98B-41B6-B586-41EDE856596E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreMentoring.SharedInfrastructure", "AspCoreMentoring.SharedInfrastructure\AspCoreMentoring.SharedInfrastructure.csproj", "{80ACCE54-F98B-41B6-B586-41EDE856596E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreMentoring.WebApi", "AspCoreMentoring.WebApi\AspCoreMentoring.WebApi.csproj", "{7444F90B-2D75-44C6-96FC-C376D5375AA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,18 +28,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{12D6D615-29A9-4BEC-8728-43F145605D05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{12D6D615-29A9-4BEC-8728-43F145605D05}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{12D6D615-29A9-4BEC-8728-43F145605D05}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{12D6D615-29A9-4BEC-8728-43F145605D05}.Release|Any CPU.Build.0 = Release|Any CPU
-		{31166D82-C986-4017-A343-15B57ECB6AE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{31166D82-C986-4017-A343-15B57ECB6AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{31166D82-C986-4017-A343-15B57ECB6AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{31166D82-C986-4017-A343-15B57ECB6AE5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{940B109A-B861-4349-94CD-621E1AB77458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{940B109A-B861-4349-94CD-621E1AB77458}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{940B109A-B861-4349-94CD-621E1AB77458}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{940B109A-B861-4349-94CD-621E1AB77458}.Release|Any CPU.Build.0 = Release|Any CPU
 		{16798409-DEF3-415E-BAC1-6B119AFE9FF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{16798409-DEF3-415E-BAC1-6B119AFE9FF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16798409-DEF3-415E-BAC1-6B119AFE9FF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -67,6 +48,10 @@ Global
 		{80ACCE54-F98B-41B6-B586-41EDE856596E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80ACCE54-F98B-41B6-B586-41EDE856596E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80ACCE54-F98B-41B6-B586-41EDE856596E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7444F90B-2D75-44C6-96FC-C376D5375AA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7444F90B-2D75-44C6-96FC-C376D5375AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7444F90B-2D75-44C6-96FC-C376D5375AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7444F90B-2D75-44C6-96FC-C376D5375AA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
