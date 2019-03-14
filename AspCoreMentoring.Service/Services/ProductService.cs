@@ -20,7 +20,7 @@ namespace AspCoreMentoring.Service.Services
         }
 
 
-        public async Task<ProductDto[]> GetProducts(int pageNumber = 1, int? pageSize = null)
+        public async Task<ProductDto[]> GetProducts(int pageNumber = 1, int pageSize = 0)
         {
             if (pageNumber < 1)
             {
@@ -28,16 +28,16 @@ namespace AspCoreMentoring.Service.Services
             }
 
 
-            if (pageSize == null)
+            if (pageSize == 0)
             {
                 var allItem = await productRepository.GetAll().ConfigureAwait(false);
 
                 return mapper.Map<ProductDto[]>(allItem);
             }
 
-            var skip = (pageNumber - 1) * pageSize.Value;
+            var skip = (pageNumber - 1) * pageSize;
 
-            var itemPerPage = await productRepository.GetForOnePage(skip, pageSize.Value);
+            var itemPerPage = await productRepository.GetForOnePage(skip, pageSize);
 
             return mapper.Map<ProductDto[]>(itemPerPage);
         }

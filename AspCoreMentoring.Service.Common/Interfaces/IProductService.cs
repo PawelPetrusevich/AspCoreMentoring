@@ -6,6 +6,6 @@ namespace AspCoreMentoring.Service.Common.Interfaces
 {
     public interface IProductService
     {
-        Task<ProductDto[]> GetProducts(int pageNumber, int? pageSize);
+        Task<ProductDto[]> GetProducts(int pageNumber, int pageSize);
     }
 }

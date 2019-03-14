@@ -1,5 +1,6 @@
 using AspCoreMentoring.SharedInfrastructure;
 using AutoMapper;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -26,10 +27,15 @@ namespace AspCoreMentoring.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.RegisterDALDependency(Configuration);
+
             services.RegisterBLDependency(Configuration);
+
             services.AddAutoMapper();
-            services.AddMvc();
+
+            services.AddMvc().AddFluentValidation();
+
             services.AddResponseCompression();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "My Api", Version = "V1" });
@@ -54,10 +60,7 @@ namespace AspCoreMentoring.WebApi
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(name: "default", template: "{controller}/{action}/{id?}");
-            });
+            app.UseMvc();
         }
 
     }
