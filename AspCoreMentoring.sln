@@ -20,7 +20,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreMentoring.DAL.Common
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreMentoring.SharedInfrastructure", "AspCoreMentoring.SharedInfrastructure\AspCoreMentoring.SharedInfrastructure.csproj", "{80ACCE54-F98B-41B6-B586-41EDE856596E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspCoreMentoring.WebApi", "AspCoreMentoring.WebApi\AspCoreMentoring.WebApi.csproj", "{7444F90B-2D75-44C6-96FC-C376D5375AA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreMentoring.WebApi", "AspCoreMentoring.WebApi\AspCoreMentoring.WebApi.csproj", "{7444F90B-2D75-44C6-96FC-C376D5375AA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

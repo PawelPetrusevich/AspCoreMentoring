@@ -5,9 +5,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
-using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace AspCoreMentoring.Server
+namespace AspCoreMentoring.WebApi
 {
     public class Startup
     {
@@ -41,7 +40,6 @@ namespace AspCoreMentoring.Server
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseResponseCompression();
-            app.UseStaticFiles();
 
             if (env.IsDevelopment())
             {

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 
-namespace AspCoreMentoring.Server
+namespace AspCoreMentoring.WebApi
 {
     public class Program
     {
