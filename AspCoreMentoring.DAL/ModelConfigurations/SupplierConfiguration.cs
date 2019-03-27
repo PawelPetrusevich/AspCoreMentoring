@@ -17,7 +17,7 @@ namespace AspCoreMentoring.DAL.ModelConfigurations
             builder.Property(supp => supp.City).HasMaxLength(15);
             builder.Property(supp => supp.Region).HasMaxLength(15);
             builder.Property(supp => supp.PostalCode).HasMaxLength(10);
-            builder.Property(supp => supp.County).HasMaxLength(15);
+            builder.Property(supp => supp.Country).HasMaxLength(15);
             builder.Property(supp => supp.Phone).HasMaxLength(24);
             builder.Property(supp => supp.Fax).HasMaxLength(24);
 

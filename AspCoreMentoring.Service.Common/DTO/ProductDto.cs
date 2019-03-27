@@ -8,7 +8,8 @@
 
         public decimal UnitPrice { get; set; }
 
-        public string CategoryName { get; set; }
-        
+        public CategoryLinkDto Category { get; set; }
+
+        public SupplierLinkDto Supplier { get; set; }
     }
 }

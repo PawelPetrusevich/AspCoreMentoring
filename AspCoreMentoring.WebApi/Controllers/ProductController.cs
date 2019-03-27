@@ -26,5 +26,14 @@ namespace AspCoreMentoring.WebApi.Controllers
 
             return product;
         }
+
+        [HttpPost]
+        [Route("CreateProduct")]
+        public async Task<ProductDto> CreateProduct(ProductDto productDto)
+        {
+            var result = await productService.CreateProduct(productDto);
+
+            return result;
+        }
     }
 }

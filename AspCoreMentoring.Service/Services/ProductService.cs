@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AspCoreMentoring.DAL.Common.Interfaces;
+using AspCoreMentoring.DAL.Common.Models;
 using AspCoreMentoring.Service.Common.DTO;
 using AspCoreMentoring.Service.Common.Interfaces;
 using AutoMapper;
@@ -40,6 +41,20 @@ namespace AspCoreMentoring.Service.Services
             var itemPerPage = await productRepository.GetForOnePage(skip, pageSize);
 
             return mapper.Map<ProductDto[]>(itemPerPage);
+        }
+
+        public async Task<ProductDto> CreateProduct(ProductDto productDto)
+        {
+            if (productDto == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            var product = mapper.Map<Product>(productDto);
+
+            var result = await productRepository.Add(product);
+
+            return mapper.Map<ProductDto>(result);
         }
     }
 }

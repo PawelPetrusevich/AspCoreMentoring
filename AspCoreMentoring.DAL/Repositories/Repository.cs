@@ -72,12 +72,12 @@ namespace AspCoreMentoring.DAL.Repositories
                 return;
             }
 
-            this.disposedFlag = true;
+            disposedFlag = true;
         }
 
         public void Dispose()
         {
-            Dispose(true);
+            Dispose(disposedFlag);
             GC.SuppressFinalize(this);
         }
     }

@@ -8,9 +8,8 @@ namespace AspCoreMentoring.SharedInfrastructure.AutoMapperRules
     {
         public ProductDtoRules()
         {
-            CreateMap<Product, ProductDto>()
-                .ForMember(dto => dto.CategoryName, entity => entity.MapFrom(product => product.Category.CategoryName));
+            CreateMap<Product, ProductDto>();
         }
-        
+
     }
 }

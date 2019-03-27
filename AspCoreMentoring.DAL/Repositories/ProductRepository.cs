@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using AspCoreMentoring.DAL.Common.Interfaces;
@@ -16,8 +17,9 @@ namespace AspCoreMentoring.DAL.Repositories
 
         public override async Task<IEnumerable<Product>> GetAll()
         {
-            await context.Categories.LoadAsync();
-            return await base.GetAll();
+            var result = dbSet.Include(x => x.Supplier)
+                .Include(x => x.Category);
+            return await result.ToListAsync();
         }
     }
 }
