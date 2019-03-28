@@ -20,7 +20,7 @@ namespace AspCoreMentoring.WebApi.Controllers
 
         [HttpGet]
         [Route("GetProducts")]
-        public async Task<ProductDto[]> GetProducts(int pageNumber = 1,int pageSize = 0)
+        public async Task<ProductViewDto[]> GetProducts(int pageNumber = 1,int pageSize = 0)
         {
             var product = await productService.GetProducts(pageNumber, pageSize);
 
@@ -29,7 +29,7 @@ namespace AspCoreMentoring.WebApi.Controllers
 
         [HttpPost]
         [Route("CreateProduct")]
-        public async Task<ProductDto> CreateProduct(ProductDto productDto)
+        public async Task<ProductViewDto> CreateProduct([FromBody]ProductViewDto productDto)
         {
             var result = await productService.CreateProduct(productDto);
 

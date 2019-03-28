@@ -21,7 +21,7 @@ namespace AspCoreMentoring.Service.Services
         }
 
 
-        public async Task<ProductDto[]> GetProducts(int pageNumber = 1, int pageSize = 0)
+        public async Task<ProductViewDto[]> GetProducts(int pageNumber = 1, int pageSize = 0)
         {
             if (pageNumber < 1)
             {
@@ -33,17 +33,17 @@ namespace AspCoreMentoring.Service.Services
             {
                 var allItem = await productRepository.GetAll().ConfigureAwait(false);
 
-                return mapper.Map<ProductDto[]>(allItem);
+                return mapper.Map<ProductViewDto[]>(allItem);
             }
 
             var skip = (pageNumber - 1) * pageSize;
 
             var itemPerPage = await productRepository.GetForOnePage(skip, pageSize);
 
-            return mapper.Map<ProductDto[]>(itemPerPage);
+            return mapper.Map<ProductViewDto[]>(itemPerPage);
         }
 
-        public async Task<ProductDto> CreateProduct(ProductDto productDto)
+        public async Task<ProductViewDto> CreateProduct(ProductViewDto productDto)
         {
             if (productDto == null)
             {
@@ -54,7 +54,7 @@ namespace AspCoreMentoring.Service.Services
 
             var result = await productRepository.Add(product);
 
-            return mapper.Map<ProductDto>(result);
+            return mapper.Map<ProductViewDto>(result);
         }
     }
 }

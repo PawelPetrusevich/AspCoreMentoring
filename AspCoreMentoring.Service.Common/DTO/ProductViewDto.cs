@@ -1,6 +1,6 @@
 ﻿namespace AspCoreMentoring.Service.Common.DTO
 {
-    public class ProductDto
+    public class ProductViewDto
     {
         public string ProductName { get; set; }
 

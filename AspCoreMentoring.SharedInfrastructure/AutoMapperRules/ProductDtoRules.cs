@@ -8,7 +8,7 @@ namespace AspCoreMentoring.SharedInfrastructure.AutoMapperRules
     {
         public ProductDtoRules()
         {
-            CreateMap<Product, ProductDto>();
+            CreateMap<Product, ProductViewDto>();
         }
 
     }

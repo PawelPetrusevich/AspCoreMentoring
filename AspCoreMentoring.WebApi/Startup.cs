@@ -1,4 +1,8 @@
+using System;
+using System.IO;
+using System.Reflection;
 using AspCoreMentoring.SharedInfrastructure;
+using AspCoreMentoring.WebApi.Filters;
 using AutoMapper;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
@@ -32,13 +36,18 @@ namespace AspCoreMentoring.WebApi
 
             services.AddAutoMapper();
 
-            services.AddMvc().AddFluentValidation();
+            services.AddMvc(opt =>
+            {
+                opt.Filters.Add(typeof(ValidationFilter));
+            })
+                .AddFluentValidation(fvc => fvc.RegisterValidatorsFromAssemblyContaining<Startup>());
 
             services.AddResponseCompression();
 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "My Api", Version = "V1" });
+                c.AddFluentValidationRules();
             });
         }
 
