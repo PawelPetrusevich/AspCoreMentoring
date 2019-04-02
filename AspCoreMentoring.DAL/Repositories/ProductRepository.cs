@@ -21,5 +21,13 @@ namespace AspCoreMentoring.DAL.Repositories
                 .Include(x => x.Category);
             return await result.ToListAsync();
         }
+
+        public override async Task<IEnumerable<Product>> GetForOnePage(int skip, int take)
+        {
+            var result = dbSet.Include(x => x.Category)
+                .Include(x => x.Supplier);
+
+            return await result.Skip(skip).Take(take).ToListAsync();
+        }
     }
 }

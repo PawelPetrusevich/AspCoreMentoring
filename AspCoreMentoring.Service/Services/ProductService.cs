@@ -38,9 +38,9 @@ namespace AspCoreMentoring.Service.Services
 
             var skip = (pageNumber - 1) * pageSize;
 
-            var itemPerPage = await productRepository.GetForOnePage(skip, pageSize);
+            var itemsPerPage = await productRepository.GetForOnePage(skip, pageSize);
 
-            return mapper.Map<ProductViewDto[]>(itemPerPage);
+            return mapper.Map<ProductViewDto[]>(itemsPerPage);
         }
 
         public async Task<ProductViewDto> CreateProduct(ProductViewDto productDto)
@@ -50,11 +50,23 @@ namespace AspCoreMentoring.Service.Services
                 throw new ArgumentNullException();
             }
 
+            if (!await IsProductContainsInDb(productDto))
+            {
+                throw new Exception("This product is created");
+            }
+
             var product = mapper.Map<Product>(productDto);
 
             var result = await productRepository.Add(product);
 
             return mapper.Map<ProductViewDto>(result);
+        }
+
+        private async Task<bool> IsProductContainsInDb(ProductViewDto productDto)
+        {
+            var productFromDb = await productRepository.Find(x => (x.ProductName == productDto.ProductName && x.Supplier.SupplierId == productDto.Supplier.Id));
+
+            return productFromDb != null;
         }
     }
 }

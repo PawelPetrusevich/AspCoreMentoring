@@ -13,10 +13,12 @@ namespace AspCoreMentoring.DAL.ModelConfigurations
             builder.Property(prod => prod.QuantityPerUnit).HasMaxLength(20);
 
             builder.HasOne<Category>(product => product.Category)
-                .WithMany(category => category.Products);
+                .WithMany(category => category.Products)
+                .HasForeignKey(product=>product.CategoryId);
 
             builder.HasOne<Supplier>(product => product.Supplier)
-                .WithMany(supplier => supplier.Products);
+                .WithMany(supplier => supplier.Products)
+                .HasForeignKey(product=>product.SupplierId);
         }
     }
 }
