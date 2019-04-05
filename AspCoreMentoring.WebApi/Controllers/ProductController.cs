@@ -35,5 +35,19 @@ namespace AspCoreMentoring.WebApi.Controllers
 
             return result;
         }
+
+        [HttpGet]
+        [Route("GetProductById")]
+        public async Task<ActionResult<ProductViewDto>> GetProductById([FromQuery] int id)
+        {
+            if (id < 1)
+            {
+                return BadRequest($"{nameof(id)} can not be less 1.");
+            }
+
+            var result = await productService.GetProductById(id);
+
+            return result;
+        }
     }
 }

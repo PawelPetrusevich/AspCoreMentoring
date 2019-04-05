@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AspCoreMentoring.DAL.Common.Interfaces;
 using AspCoreMentoring.DAL.Common.Models;
@@ -60,6 +61,23 @@ namespace AspCoreMentoring.Service.Services
             var result = await productRepository.Add(product);
 
             return mapper.Map<ProductViewDto>(result);
+        }
+
+        public async Task<ProductViewDto> GetProductById(int id)
+        {
+            if (id < 1)
+            {
+                throw new ArgumentException($"{nameof(id)} can not be less 1.");
+            }
+
+            var product = (await productRepository.Find(item => item.ProductId == id)).SingleOrDefault();
+
+            if (product == null)
+            {
+                throw new ArgumentException($"Product with this {nameof(id)} not found.");
+            }
+
+            return mapper.Map<ProductViewDto>(product);
         }
 
         private async Task<bool> IsProductContainsInDb(ProductViewDto productDto)
