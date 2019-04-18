@@ -45,6 +45,13 @@ namespace AspCoreMentoring.DAL.Repositories
             return result;
         }
 
+        public virtual async Task<IEnumerable<TModel>> GetAll(params Expression<Func<TModel, object>>[] includeProperties)
+        {
+            var query = GetAllIncluding(includeProperties);
+            var result = await query.ToListAsync();
+            return result;
+        }
+
         public virtual async Task<IEnumerable<TModel>> GetForOnePage(int skip, int take)
         {
             if (skip < 0 || take < 0)
@@ -65,6 +72,13 @@ namespace AspCoreMentoring.DAL.Repositories
             return await dbSet.Where(filterExpression).ToListAsync();
         }
 
+        public virtual async Task<IEnumerable<TModel>> Find(Expression<Func<TModel, bool>> filterExpression, params Expression<Func<TModel, object>>[] includeProperties)
+        {
+            var query = GetAllIncluding(includeProperties);
+            var result = await query.Where(filterExpression).ToListAsync();
+            return result;
+        }
+
         protected virtual void Dispose(bool disposing)
         {
             if (disposing)
@@ -79,6 +93,15 @@ namespace AspCoreMentoring.DAL.Repositories
         {
             Dispose(disposedFlag);
             GC.SuppressFinalize(this);
+        }
+
+        private IQueryable<TModel> GetAllIncluding(params Expression<Func<TModel, object>>[] includeProperties)
+        {
+            IQueryable<TModel> queryable = dbSet.AsNoTracking();
+
+            return includeProperties.Aggregate(
+                queryable,
+                (current, includeProperty) => current.Include(includeProperty));
         }
     }
 }

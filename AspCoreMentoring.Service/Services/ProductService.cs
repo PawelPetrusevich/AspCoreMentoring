@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AspCoreMentoring.DAL.Common.Interfaces;
+﻿using AspCoreMentoring.DAL.Common.Interfaces;
 using AspCoreMentoring.DAL.Common.Models;
 using AspCoreMentoring.Service.Common.DTO;
 using AspCoreMentoring.Service.Common.Interfaces;
 using AutoMapper;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AspCoreMentoring.Service.Services
 {
@@ -21,7 +20,6 @@ namespace AspCoreMentoring.Service.Services
             this.mapper = mapper;
         }
 
-
         public async Task<ProductViewDto[]> GetProducts(int pageNumber = 1, int pageSize = 0)
         {
             if (pageNumber < 1)
@@ -29,10 +27,9 @@ namespace AspCoreMentoring.Service.Services
                 throw new ArgumentOutOfRangeException();
             }
 
-
             if (pageSize == 0)
             {
-                var allItem = await productRepository.GetAll().ConfigureAwait(false);
+                var allItem = await productRepository.GetAll(x => x.Category, x => x.Supplier).ConfigureAwait(false);
 
                 return mapper.Map<ProductViewDto[]>(allItem);
             }
